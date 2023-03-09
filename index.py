@@ -1,9 +1,6 @@
 # This is vercel stuff
-from flask import Flask
-from flask_bootstrap import Bootstrap4 as Bootstrap
-from socket import gethostname
+from flask_bootstrap import Bootstrap
 from flask import Flask, render_template
-
 
 template_folder_path = "Templates"
 static_folder_path = "static"
@@ -14,5 +11,6 @@ Bootstrap(app)
 
 @app.route('/')
 def index():
-    print('heeej')
     return render_template('index.html')
+
+app.run(debug=True)
