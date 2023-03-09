@@ -3,8 +3,7 @@ from flask import Flask
 from flask_bootstrap import Bootstrap4 as Bootstrap
 from socket import gethostname
 from flask import Flask, render_template
-import pandas as pd
-import matplotlib.pyplot as plt
+
 
 template_folder_path = "Templates"
 static_folder_path = "static"
@@ -15,12 +14,5 @@ Bootstrap(app)
 
 @app.route('/')
 def index():
-    data = pd.read_csv('AAPL-2.csv')
-    plt.plot(data['Date'], data['Close'])
-    plt.xlabel('Date')
-    plt.ylabel('Closing Price')
-    plt.title('Stock Data')
-    plt.xticks(rotation=45)
-    plt.tight_layout()
-    plt.savefig('static/stock_graph.png')
+    print('heeej')
     return render_template('index.html')
