@@ -2,6 +2,9 @@
 from flask import Flask
 from flask_bootstrap import Bootstrap4 as Bootstrap
 from socket import gethostname
+from flask import Flask, render_template
+import pandas as pd
+import matplotlib.pyplot as plt
 
 template_folder_path = "Templates"
 static_folder_path = "static"
